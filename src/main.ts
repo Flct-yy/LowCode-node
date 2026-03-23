@@ -13,10 +13,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   // 启用CORS支持
   app.enableCors();
-  // 启动服务器，监听3001端口
-  await app.listen(3001);
+  // 启动服务器，使用环境变量中的端口或默认端口3001
+  const PORT = process.env.PORT || 3001;
+  await app.listen(PORT);
   // 输出服务器运行信息
-  console.log('已经运行在 http://localhost:3001');
+  console.log(`已经运行在 http://localhost:${PORT}`);
 }
 
 // 调用入口函数启动应用
