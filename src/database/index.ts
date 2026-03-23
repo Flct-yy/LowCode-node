@@ -5,11 +5,9 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js'
  * @returns SupabaseClient实例
  */
 export function createSupabaseClient(): SupabaseClient {
-  const supabaseUrl = process.env.SUPABASE_URL || ''
-  const supabaseKey = process.env.SUPABASE_ANON_KEY || ''
-
-  console.log('Supabase URL:', supabaseUrl)
-  console.log('Supabase Key length:', supabaseKey ? supabaseKey.length : 0)
+  // 获取环境变量并去除多余的引号和空白字符
+  const supabaseUrl = (process.env.SUPABASE_URL || '').replace(/^[\s\'\"]+|[\s\'\"]+$/g, '')
+  const supabaseKey = (process.env.SUPABASE_ANON_KEY || '').replace(/^[\s\'\"]+|[\s\'\"]+$/g, '')
 
   if (!supabaseUrl) {
     throw new Error('SUPABASE_URL is required')
