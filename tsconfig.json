@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    /* 覆盖根配置中不适合后端的选项 */
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES2021",
+    /* NestJS必需的装饰器支持 */
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    /* 保留根配置中的其他选项 */
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    /* 调整输出目录 */
+    "outDir": "./dist",
+    "sourceMap": true,
+    "incremental": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
+}
