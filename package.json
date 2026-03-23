@@ -1,7 +1,6 @@
 {
   "name": "@wect/api",
   "version": "1.0.0",
-  "packageManager": "yarn@4.9.1",
   "scripts": {
     "build:ver":"nest build && node dist/index",
     "build": "nest build",
